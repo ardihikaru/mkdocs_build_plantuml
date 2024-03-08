@@ -1,23 +1,19 @@
-import io
-import os
-
 from setuptools import setup, find_packages
 
 with open("README.md", "r") as f:
     long_description = f.read()
 
-
-with open('VERSION', 'r') as f:
-    __version__ = f.read().strip()
+__version__ = "1.9.1"
 
 setup(
-    name="mkdocs-build-plantuml-plugin",
+    name="mkdocs-build-plantuml-plugin-ardihikaru",
     version=__version__,
-    description="An MkDocs plugin to call plantuml locally or remote",
+    description="An MkDocs plugin to call plantuml locally or remote (cloned from: "
+                "https://github.com/christo-ph/mkdocs_build_plantuml)",
     long_description=long_description,
     long_description_content_type="text/markdown",
     keywords="mkdocs plantuml publishing documentation uml sequence diagram",
-    url="https://github.com/christo-ph/mkdocs_build_plantuml",
+    url=f"https://pypi.org/project/mkdocs-build-plantuml-plugin-ardihikaru/{__version__}/#files",
     author="Christoph Galler",
     author_email="galler@quantor.consulting",
     license="MIT",
