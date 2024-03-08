@@ -78,6 +78,7 @@ class BuildPlantumlPlugin(BasePlugin[BuildPlantumlPluginConfig]):
                         diagram = PuElement(file, subdir)
                         diagram.root_dir = root.root_dir
                         diagram.out_dir = self._get_out_directory(root, subdir)
+                        _, file_extension = os.path.splitext(diagram.file)
 
                         # Handle to read source file
                         with open(
@@ -85,6 +86,11 @@ class BuildPlantumlPlugin(BasePlugin[BuildPlantumlPluginConfig]):
                             "r",
                             encoding="utf-8",
                         ) as f:
+                            # ignore other file extension
+                            if file_extension != ".puml":
+                                continue
+
+                            # otherwise, read and process it
                             diagram.src_file = f.readlines()
 
                         # Search for start (@startuml <filename>)

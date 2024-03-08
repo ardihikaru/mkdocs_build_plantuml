@@ -3,6 +3,15 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# editor
+.idea
+.vscode
+
+# ignored resource
+data
+
+!data/.gitkeep
+
 # C extensions
 *.so
 
